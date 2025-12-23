@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  NotebookLM Logo Scrubber - LaunchAgent Template
+
+  Replace these placeholders before installing:
+
+  {{INSTALL_DIR}} = Where you cloned/downloaded this repo
+                    Example: /Users/yourname/Projects/notebooklm-scrubber
+
+  {{WATCH_DIR}}   = Folder where you'll drop NotebookLM PDFs to be processed
+                    Example: /Users/yourname/Documents/NotebookLM-Exports
+                    Example: /Users/yourname/Library/CloudStorage/GoogleDrive/NotebookLM
+
+  Tip: Run setup.sh instead - it fills these in automatically.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.notebooklm-scrubber</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <!-- {{INSTALL_DIR}} = folder containing this repo's scripts -->
+        <string>{{INSTALL_DIR}}/watch-and-scrub.sh</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <!-- {{WATCH_DIR}} = folder to monitor for new PDFs -->
+        <key>NOTEBOOKLM_WATCH_DIR</key>
+        <string>{{WATCH_DIR}}</string>
+    </dict>
+
+    <key>WatchPaths</key>
+    <array>
+        <string>{{WATCH_DIR}}</string>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>{{INSTALL_DIR}}/launchagent-stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>{{INSTALL_DIR}}/launchagent-stderr.log</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
