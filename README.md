@@ -136,21 +136,6 @@ LOGO_TOP = 747     # Move up: decrease, Move down: increase
 
 ---
 
----
-
-## Related: PDF to Slides Conversion Research
-
-Want to convert your NotebookLM PDFs into editable presentations? Check out the [`pdf-to-slides-research/`](./pdf-to-slides-research/) folder for:
-
-- **What was tested:** Codia Visual Struct API, PyMuPDF + Gemini Vision, python-pptx
-- **What worked:** Manual Codia browser conversion, individual components
-- **What didn't work:** Full automation (OCR errors, positioning issues)
-- **Python scripts:** Working extraction, vision analysis, and PPTX generation code
-
-**TL;DR:** No fully automated solution worked reliably. Use [Codia AI NoteSlide](https://noteslide.codia.ai/) in the browser + manual review for best results.
-
----
-
 ## License
 
 MIT - Use it however you want.
